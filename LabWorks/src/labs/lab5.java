@@ -1,9 +1,10 @@
 package labs;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class lab5 {
-   public static void main(String[] args) {
+ public static void main(String[] args) {
         System.out.println("Задание 1");
         lab51 lab51 = new lab51();
         lab51.inf();
@@ -27,10 +28,10 @@ public class lab5 {
     }
 
     public static class lab51 {
+        private String text;
         public void inf() {
-            System.out.println("Текст:");
-            String text = new String("Написать метод для поиска самого длинного слова в тексте");
-            System.out.println(text);
+            text1 text1 = new text1();
+            text=text1.in();
             int tl = text.length();
             int l = 0;
             int j = 0;
@@ -38,7 +39,7 @@ public class lab5 {
             char[] textchar= text.toCharArray();
             char[] word= new char[' '];
             char[] maxword= new char[' '];
-            for (int i = 0; i < tl; i++) {
+            for (int i = 0; i < tl-1; i++) {
                 if (textchar[i] == ',' || textchar[i] == '.' || textchar[i] == ':' || textchar[i] == ';' || textchar[i] == '-' || textchar[i] == ' ') {
                     l=0;
                     j=0;
@@ -61,10 +62,10 @@ public class lab5 {
     }
 
     public static class lab52 {
+        private String text;
         public void inf() {
-            System.out.println("Слово:");
-            String text = new String("радар");
-            System.out.println(text);
+            word1 text1 = new word1();
+            text=text1.in();
             boolean res = true;
             int tl = text.length();
             int l = 0;
@@ -86,10 +87,10 @@ public class lab5 {
     }
 
     public static class lab53 {
+        private String text;
         public void inf() {
-            System.out.println("Текст:");
-            String text = new String("Написать метод для поиска самого длинного слова в бяка тексте");
-            System.out.println(text);
+            text1 text1 = new text1();
+            text=text1.in();
             int tl = text.length();
             int l = 0;
             int a = 0;
@@ -112,23 +113,23 @@ public class lab5 {
     }
 
     public static class lab54 {
+        private String text1;
+        private String text2;
         public void inf() {
-            System.out.println("Строка1:");
-            String text1 = new String("Написать метод для поиска самого длинного слова в тексте");
-            System.out.println(text1);
+            text1 text = new text1();
+            text1=text.in();
             int tl1 = text1.length();
-            String text2 = new String("метод");
+            text1 text22 = new text1();
+            text2=text22.in();
             int tl2 = text2.length();
-            System.out.println("Строка2:");
-            System.out.println(text2);
             int l = 0;
             int k = 0;
             int res = 0;
             char[] textchar1= text1.toCharArray();
             char[] textchar2= text2.toCharArray();
-            for (int i = 0; i < tl1; i++) {
+            for (int i = 0; i < tl1-1; i++) {
                 if (textchar1[i] == textchar2[0]) {
-                    for (int j = 0; j < tl2; j++) {
+                    for (int j = 0; j < tl2-1; j++) {
                         if (textchar1[i+k] == textchar2[j]) {
                             l = (l + 1);
                             k = k + 1;
@@ -149,10 +150,10 @@ public class lab5 {
     }
 
     public static class lab55 {
+        private String text;
         public void inf() {
-            System.out.println("Sample Output:");
-            String text = new String("Напишите метод, который инвертирует слова в строке. Предполагается, что в строке нет знаков препинания, и слова разделены пробелами.");
-            System.out.println(text);
+            text1 text1 = new text1();
+            text=text1.in();
             int tl= text.length();
             int l = 0;
             int k = 0;
@@ -182,6 +183,26 @@ public class lab5 {
             String str = String.valueOf(textchar1);
             String out = str.replaceAll("\\p{Cntrl}", "");
             System.out.println(out);
+        }
+    }
+
+    public static class text1 {
+        public String in() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите текст:");
+            String text;
+            text=scanner.nextLine();
+            return text;
+        }
+    }
+
+    public static class word1 {
+        public String in() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Введите слово:");
+            String word;
+            word=scanner.next();
+            return word;
         }
     }
 }
