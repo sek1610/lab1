@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class lab4 {
-  public static void main(String[] args) {
+ public static void main(String[] args) {
         System.out.println("Часть 1");
         System.out.println("===================");
         System.out.println("Задание 1");
@@ -70,9 +70,10 @@ public class lab4 {
             int j = 0;
             int k = 0;
             int z = 0;
-            int[] mod3 = new int[ints.length/3];;
-            int[] mod5 = new int[ints.length/5];
-            int[] mod15 = new int[ints.length/15];
+            int[] mod3 = new int[ints.length / 3];
+            ;
+            int[] mod5 = new int[ints.length / 5];
+            int[] mod15 = new int[ints.length / 15];
             for (int i = 0; i < ints.length; i++) {
                 ints[i] = i + 1;
                 if (ints[i] % 3 == 0) {
@@ -101,11 +102,12 @@ public class lab4 {
             System.out.print("Введите третье число ");
             int z = scanner.nextInt();
             System.out.println("Сумма второго и первого числа равно третьему число?");
-            if (x+y == z) {
-                System.out.println("Результат: true");
-            }
-            else {
-                System.out.println("Результат: false");
+            boolean res = true;
+            if (x + y == z) {
+                System.out.println("Результат:" + res);
+            } else {
+                res=false;
+                System.out.println("Результат:" + res);
             }
         }
     }
@@ -120,29 +122,31 @@ public class lab4 {
             System.out.print("Введите третье число ");
             int z = scanner.nextInt();
             System.out.println("Второе число больше первого числа, а третье число больше второго числа?");
-            if (x<y && y<z) {
-                System.out.println("Результат: true");
-            }
-            else {
-                System.out.println("Результат: false");
+            boolean res = true;
+            if (x < y && y < z) {
+                System.out.println("Результат:" + res);
+            } else {
+                res=false;
+                System.out.println("Результат:" + res);
             }
         }
     }
 
     public static class t5 {
         public void inf() {
-            int[] array = {4, 5, 7, 7, 3};
-            System.out.println("Массив");
-            System.out.println("array=" + Arrays.toString(array));
-            if (array.length>=2) {
-                if (array[0]==3 || array[array.length-1]==3) {
-                    System.out.println("Результат: true");
+            int[] array;
+            massiv array1 = new massiv();
+            array = array1.in();
+            boolean res = true;
+            System.out.println("Присутствует на первом или последнем элементе массива 1 или 3?");
+            if (array.length >= 2) {
+                if (array[0] == 3 || array[array.length - 1] == 3) {
+                    System.out.println("Результат:" + res);
+                } else {
+                    res = false;
+                    System.out.println("Результат:" + res);
                 }
-                else {
-                    System.out.println("Результат: false");
-                }
-            }
-            else {
+            } else {
                 System.out.println("Длина массива должна быть больше или равна двум");
             }
 
@@ -151,19 +155,18 @@ public class lab4 {
 
     public static class t6 {
         public void inf() {
-            int[] array = {4, 5, 7, 7, 3};
+            int[] array;
+            massiv array1 = new massiv();
+            array = array1.in();
             int j = 0;
-            System.out.println("Массив");
-            System.out.println("array=" + Arrays.toString(array));
             for (int i = 0; i < array.length; i++) {
                 if (array[i] == 3 || array[i] == 1) {
                     j = 1;
                 }
             }
-            if (j==0) {
+            if (j == 0) {
                 System.out.println("Результат: в массиве нет 1 и 3");
-            }
-            else {
+            } else {
                 System.out.println("Результат: в массиве есть 1 или 3");
             }
         }
@@ -171,20 +174,19 @@ public class lab4 {
 
     public static class t7 {
         public void inf() {
-            int[] array = {4, 5, 7, 7, 3};
+            int[] array;
+            massiv array1 = new massiv();
+            array = array1.in();
             int j = 0;
-            System.out.println("Массив");
-            System.out.println("array=" + Arrays.toString(array));
-            for (int i = 0; i < array.length-1; i++) {
-                if (array[i]<=array[i+1]) {
-                }else{
-                    j=j+1;
+            for (int i = 0; i < array.length - 1; i++) {
+                if (array[i] <= array[i + 1]) {
+                } else {
+                    j = j + 1;
                 }
             }
-            if (j==0) {
+            if (j == 0) {
                 System.out.println("Результат: массив отсортирован");
-            }
-            else {
+            } else {
                 System.out.println("Результат:please try again (массив не отсортирован)");
             }
         }
@@ -198,7 +200,7 @@ public class lab4 {
             int[] ints = new int[x];
             System.out.println("Numbers of array: ");
             for (int i = 0; i < x; i++) {
-                ints[i]= scanner.nextInt();
+                ints[i] = scanner.nextInt();
             }
             System.out.println("Результат: " + Arrays.toString(ints));
         }
@@ -206,13 +208,15 @@ public class lab4 {
 
     public static class t9 {
         public void inf() {
-            int[] array = {4, 5, 7, 7, 3};
+            int[] array;
+            massiv array1 = new massiv();
+            array = array1.in();
             int j = 0;
             System.out.println("Исходный массив");
             System.out.println("array1=" + Arrays.toString(array));
-            j=array[0];
-            array[0]=array[array.length-1];
-            array[array.length-1]=j;
+            j = array[0];
+            array[0] = array[array.length - 1];
+            array[array.length - 1] = j;
             System.out.println("Преобразованный массив");
             System.out.println("array2=" + Arrays.toString(array));
         }
@@ -220,11 +224,11 @@ public class lab4 {
 
     public static class t10 {
         public void inf() {
-            int[] array = {1, 1, 3, 3, 4};
+            int[] array;
+            massiv array1 = new massiv();
+            array = array1.in();
             Integer res = null, k = null;
             int z = 0;
-            System.out.println("Массив");
-            System.out.println("array1=" + Arrays.toString(array));
             for (int i = 0; i < (array.length); i++) {
                 if (z != 1) {
                     z = 0;
@@ -240,10 +244,24 @@ public class lab4 {
             }
             if (z == 1) {
                 System.out.println("Уникальное число: " + k);
-            }
-            else {
+            } else {
                 System.out.println("В массиве нет уникального числа");
             }
+        }
+    }
+
+    public static class massiv {
+        public int[] in() {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите длину массива: ");
+            int length = scanner.nextInt();
+            int[] array = new int[length];
+            System.out.println("Введите элементы массива:");
+            for (int i = 0; i < length; i++) {
+                array[i] = scanner.nextInt();
+            }
+            System.out.println("Массив: " + Arrays.toString(array));
+            return array;
         }
     }
 }
