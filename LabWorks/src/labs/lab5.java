@@ -4,34 +4,32 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class lab5 {
-  public static void main(String[] args) {
+   public static void main(String[] args) {
         System.out.println("Задание 1");
         maxword lab51 = new maxword();
-        System.out.println("Самое длинное слово: " + lab51.inf());
+        System.out.println("Самое длинное слово: " + lab51.inf(new String()));
         System.out.println("===================");
         System.out.println("Задание 2");
         palindrom lab52 = new palindrom();
-        System.out.println("Является ли слово палиндромом: " + lab52.inf());
+        System.out.println("Является ли слово палиндромом: " + lab52.inf(new String()));
         System.out.println("===================");
         System.out.println("Задание 3");
         censore lab53 = new censore();
-        System.out.println("Преобразованный текст: " +lab53.inf());
+        System.out.println("Преобразованный текст: " +lab53.inf(new String()));
         System.out.println("===================");
         System.out.println("Задание 4");
         repeatings lab54 = new repeatings();
-        System.out.println("Количество вхождений: " + lab54.inf());
+        System.out.println("Количество вхождений: " + lab54.inf(new String(), new String()));
         System.out.println("===================");
         System.out.println("Задание 5");
         reverse lab55 = new reverse();
-        System.out.println("The string reversed word by word is:");
-        System.out.println(lab55.inf());
+        System.out.println("Преобразованный текст: " + lab55.inf(new String()));
         System.out.println("===================");
 
     }
 
     public static class maxword {
-        private String text;
-        public String inf() {
+        public String inf(String text) {
             text1 text1 = new text1();
             text=text1.in();
             int tl = text.length();
@@ -62,8 +60,7 @@ public class lab5 {
     }
 
     public static class palindrom {
-        private String text;
-        public boolean inf() {
+        public boolean inf(String text) {
             word1 text1 = new word1();
             text=text1.in();
             text=text.toLowerCase();
@@ -87,8 +84,7 @@ public class lab5 {
     }
 
     public static class censore {
-        private String text;
-        public String inf() {
+        public String inf(String text) {
             text1 text1 = new text1();
             text=text1.in();
             String cens ="[вырезано цензурой]";
@@ -107,9 +103,7 @@ public class lab5 {
     }
 
     public static class repeatings {
-        private String text1;
-        private String text2;
-        public int inf() {
+        public int inf(String text1, String text2) {
             text1 text = new text1();
             text1=text.in();
             int tl1 = text1.length();
@@ -147,8 +141,7 @@ public class lab5 {
     }
 
     public static class reverse {
-        private String text;
-        public String inf() {
+        public String inf(String text) {
             text1 text1 = new text1();
             text=text1.in();
             int tl= text.length();
