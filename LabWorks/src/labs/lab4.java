@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class lab4 {
- public static void main(String[] args) {
+  public static void main(String[] args) {
         System.out.println("Часть 1");
         System.out.println("===================");
         System.out.println("Задание 1");
@@ -19,26 +19,26 @@ public class lab4 {
         System.out.println("===================");
         System.out.println("Задание 3");
         xandyequalsz t3 = new xandyequalsz();
-        System.out.println("Сумма второго и первого числа равна третьему число?: " + t3.inf());
+        System.out.println("Сумма второго и первого числа равна третьему число?: " + t3.inf(1,1,1));
         System.out.println("===================");
         System.out.println("Задание 4");
         xlessylessz t4 = new xlessylessz();
-        System.out.println("Второе число больше первого числа, а третье число больше второго числа?: " + t4.inf());
+        System.out.println("Второе число больше первого числа, а третье число больше второго числа?: " + t4.inf(1,1,1));
         System.out.println("===================");
         System.out.println("Задание 5");
         hasmassive1or3on1orlast t5 = new hasmassive1or3on1orlast();
-        System.out.println("Присутствует на первом или последнем элементе массива 1 или 3?: " + t5.inf());
+        System.out.println("Присутствует на первом или последнем элементе массива 1 или 3?: " + t5.inf(new int[]{1, 1, 1}));
         System.out.println("===================");
         System.out.println("Задание 6");
         hasmassive1or3 t6 = new hasmassive1or3();
-        System.out.println("Присутствует ли в массиве 1 или 3?: " + t6.inf());
+        System.out.println("Присутствует ли в массиве 1 или 3?: " + t6.inf(new int[]{}));
         System.out.println("===================");
         System.out.println("===================");
         System.out.println("Часть 2");
         System.out.println("===================");
         System.out.println("Задание 1");
         sortmassiv t7 = new sortmassiv();
-        t7.inf();
+        t7.inf(new int[]{});
         System.out.println("===================");
         System.out.println("Задание 2");
         entermassiv t8 = new entermassiv();
@@ -47,11 +47,11 @@ public class lab4 {
         System.out.println("Задание 3");
         firstchangetolast t9 = new firstchangetolast();
         System.out.println("Преобразованный массив");
-        System.out.println("Array2: " + Arrays.toString(t9.inf()));
+        System.out.println("Array2: " + Arrays.toString(t9.inf(new int[]{})));
         System.out.println("===================");
         System.out.println("Задание 4");
         uniquenum t10 = new uniquenum();
-        System.out.println("Уникальное число: " + t10.inf());
+        System.out.println("Уникальное число: " + t10.inf(new int[]{}));
     }
 
     public static class nechet {
@@ -110,17 +110,10 @@ public class lab4 {
     }
 
     public static class xandyequalsz {
-        private int x;
-        private int y;
-        private int z;
-        public boolean inf() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Введите первое число ");
-            x = scanner.nextInt();
-            System.out.print("Введите второе число ");
-            y = scanner.nextInt();
-            System.out.print("Введите третье число ");
-            z = scanner.nextInt();
+        public boolean inf(int x, int y, int z) {
+            System.out.println("Введите первое число " + x);
+            System.out.println("Введите второе число " + y);
+            System.out.println("Введите третье число " + z);
             boolean res = true;
             if (x + y != z) {
                 res=false;
@@ -130,17 +123,10 @@ public class lab4 {
     }
 
     public static class xlessylessz {
-        private int x;
-        private int y;
-        private int z;
-        public boolean inf() {
-            Scanner scanner = new Scanner(System.in);
-            System.out.print("Введите первое число ");
-            x = scanner.nextInt();
-            System.out.print("Введите второе число ");
-            y = scanner.nextInt();
-            System.out.print("Введите третье число ");
-            z = scanner.nextInt();
+        public boolean inf(int x, int y, int z) {
+            System.out.println("Введите первое число " + x);
+            System.out.println("Введите второе число " + y);
+            System.out.println("Введите третье число " + z);
             boolean res = false;
             if (x < y && y < z) {
                 res=true;
@@ -150,8 +136,7 @@ public class lab4 {
     }
 
     public static class hasmassive1or3on1orlast {
-        private int[] array;
-        public boolean inf() {
+        public boolean inf(int[] array) {
             massiv array1 = new massiv();
             array = array1.in();
             boolean res = true;
@@ -168,8 +153,7 @@ public class lab4 {
     }
 
     public static class hasmassive1or3 {
-        private int[] array;
-        public boolean inf() {
+        public boolean inf(int[] array) {
             massiv array1 = new massiv();
             array = array1.in();
             int j = 0;
@@ -187,8 +171,7 @@ public class lab4 {
     }
 
     public static class sortmassiv {
-        private int[] array;
-        public void inf() {
+        public void inf(int[] array) {
             massiv array1 = new massiv();
             array = array1.in();
             int j = 0;
@@ -222,8 +205,7 @@ public class lab4 {
     }
 
     public static class firstchangetolast {
-        private int[] array;
-        public int[] inf() {
+        public int[] inf(int[] array) {
             massiv array1 = new massiv();
             array = array1.in();
             int j = 0;
@@ -237,8 +219,7 @@ public class lab4 {
     }
 
     public static class uniquenum {
-        private int[] array;
-        public int inf() {
+        public int inf(int[] array) {
             massiv array1 = new massiv();
             array = array1.in();
             Integer res = null, k = null;
